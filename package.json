@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild ./src/index.js --bundle --outdir=\"build\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env MODE=production node ./config/esbuild/esbuild-config.js",
+    "build:dev": "cross-env MODE=development node ./config/esbuild/esbuild-config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esbuild": "^0.19.5"
+    "esbuild": "^0.19.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
